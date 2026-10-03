@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --unge-dark: #06141b;
+  --unge-dark-deep: #031017;
+  --unge-blue: #9fcafa;
+  --unge-white: #f5f8fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--unge-dark);
+  color: var(--unge-white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--unge-blue);
+  color: var(--unge-dark);
+}
