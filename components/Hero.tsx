@@ -8,11 +8,10 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden bg-[#0d1722]">
       <div
-        className="absolute inset-y-0 right-0 w-full bg-cover bg-center md:bg-right md:w-[62%]"
+        className="absolute inset-y-0 right-0 w-full bg-cover bg-center md:w-[62%] md:bg-right"
         style={{ backgroundImage: `url(${IMAGES.hero})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0d1722] via-[#0d1722]/90 to-[#0d1722]/60 md:via-[#0d1722]/85 md:to-transparent" />
-      <div className="absolute inset-0 bg-[#0d1722]/30 md:bg-[#0d1722]/20" />
+      <div className="absolute inset-0 bg-[#0d1722]/50 md:bg-gradient-to-r md:from-[#0d1722] md:via-[#0d1722]/85 md:to-transparent" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-24 pt-32 md:px-10 md:pb-20 md:pt-28 lg:px-12">
         <SectionIndex n={HERO.index} />

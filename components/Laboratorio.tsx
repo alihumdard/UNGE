@@ -18,7 +18,7 @@ export default function Laboratorio() {
         <div className="pointer-events-none absolute inset-x-0 top-2/3 border-t border-white/10" />
         <div className="pointer-events-none absolute inset-y-0 left-1/4 border-l border-white/10" />
 
-        <div className="relative z-10 w-full px-6 py-12 md:px-10 md:py-0 lg:px-12">
+        <div className="relative z-10 w-full px-6 pb-12 pt-0 md:px-10 md:py-0 lg:px-12" style={{marginTop: "-15%"}}>
           <SectionIndex n={LAB.index} />
           <TwoToneHeading
             white={LAB.white}
