@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden bg-[#0d1722]">
       <div
-        className="absolute inset-y-0 right-0 w-full bg-cover bg-center md:w-[62%] md:bg-right"
+        className="absolute inset-0 bg-cover bg-center md:inset-y-0 md:right-0 md:left-auto md:w-[62%] md:bg-right"
         style={{ backgroundImage: `url(${IMAGES.hero})` }}
       />
       <div className="absolute inset-0 bg-[#0d1722]/50 md:bg-gradient-to-r md:from-[#0d1722] md:via-[#0d1722]/85 md:to-transparent" />
