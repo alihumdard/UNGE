@@ -25,7 +25,7 @@ export default function Laboratorio() {
             accent={LAB.accent}
             className="mt-5 text-[clamp(2rem,3.9vw,4.3rem)] leading-[0.95]"
           />
-          <p className="mt-4 max-w-xs text-[clamp(0.85rem,1.05vw,1.1rem)] font-light leading-[1.5] text-white md:max-w-md md:leading-[1.2]">
+          <p className="mt-4 max-w-xs text-[clamp(1rem,1.4vw,1.45rem)] font-light leading-[1.5] text-white md:max-w-md md:leading-[1.2]">
             {LAB.text.map((l) => (<span key={l} className="block">{l}</span>))}
           </p>
         </div>
