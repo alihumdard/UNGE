@@ -10,7 +10,7 @@ export default function Laboratorio() {
       <div className="relative flex min-h-[55vh] items-center overflow-hidden md:min-h-screen">
         <div
           className="absolute inset-0"
-          style={{ backgroundImage: `url(${IMAGES.laboratorio})`, backgroundSize: "cover", backgroundPosition: "70% center" }}
+          style={{ backgroundImage: `url(${IMAGES.laboratorio})`, backgroundSize: "cover", backgroundPosition: "center center" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a26]/60 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f1a26]/70 via-transparent to-transparent" />
