@@ -4,14 +4,14 @@ import "./globals.css";
 
 const heading = localFont({
   src: "../public/fonts/InterTight-700-800.woff2",
-  variable: "--font-heading",
+  variable: "--font-heading-var",
   weight: "700 800",
   display: "swap",
 });
 
 const body = localFont({
   src: "../public/fonts/Inter-300-400-500.woff2",
-  variable: "--font-body",
+  variable: "--font-body-var",
   weight: "300 400 500",
   display: "swap",
 });

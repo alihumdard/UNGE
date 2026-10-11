@@ -1,8 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #B5C3DC;
+  --color-bg: #0F1A26;
+  --color-bgAlt: #141A20;
+  --font-heading: var(--font-heading-var), Arial, sans-serif;
+  --font-body: var(--font-body-var), Arial, sans-serif;
+}
 
 html { scroll-behavior: smooth; }
-body { background: #0F1A26; color: #fff; font-family: var(--font-body), Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { background: #0F1A26; color: #fff; font-family: var(--font-body-var), Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 
-.h-display { font-family: var(--font-heading), Arial, sans-serif; font-weight: 700; text-transform: uppercase; line-height: 0.98; letter-spacing: -0.01em; }
+.h-display { font-family: var(--font-heading-var), Arial, sans-serif; font-weight: 700; text-transform: uppercase; line-height: 0.98; letter-spacing: -0.01em; }
