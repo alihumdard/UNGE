@@ -12,8 +12,8 @@ export default function Laboratorio() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${IMAGES.laboratorio})` }}
         />
-        <div className="absolute inset-0 bg-[#0f1a26]/50" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0f1a26]/30 to-[#0f1a26]/70" />
+        <div className="absolute inset-0 bg-[#0f1a26]/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0f1a26]/40" />
         <div className="pointer-events-none absolute inset-x-0 top-1/3 border-t border-white/10" />
         <div className="pointer-events-none absolute inset-x-0 top-2/3 border-t border-white/10" />
         <div className="pointer-events-none absolute inset-y-0 left-1/4 border-l border-white/10" />
