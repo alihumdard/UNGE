@@ -9,9 +9,11 @@ export default function Laboratorio() {
       {/* Left: image + text */}
       <div className="relative flex min-h-[55vh] items-center overflow-hidden md:min-h-screen">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center bg-[center_40%]"
           style={{ backgroundImage: `url(${IMAGES.laboratorio})` }}
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a26]/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f1a26]/70 via-transparent to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 top-1/3 border-t border-white/10" />
         <div className="pointer-events-none absolute inset-x-0 top-2/3 border-t border-white/10" />
         <div className="pointer-events-none absolute inset-y-0 left-1/4 border-l border-white/10" />

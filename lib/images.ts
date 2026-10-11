@@ -2,5 +2,5 @@
 export const IMAGES = {
   hero: "/images/hero-bg.png",
   ciencia: "/images/ciencia-bg.jpg",
-  laboratorio: "/images/laboratorio-bg.jpg",
+  laboratorio: "/images/Dew-Kissed%20Serrated%20Leaf%20in%20Moody%20Blue.png",
 };
