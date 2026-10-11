@@ -10,7 +10,7 @@ export default function Laboratorio() {
       <div className="relative flex min-h-[55vh] items-center overflow-hidden md:min-h-screen">
         <div
           className="absolute inset-0"
-          style={{ backgroundImage: `url(${IMAGES.laboratorio})`, backgroundSize: "cover", backgroundPosition: "center center" }}
+          style={{ backgroundImage: `url(${IMAGES.laboratorio})`, backgroundSize: "cover", backgroundPosition: "70% center" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a26]/60 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f1a26]/70 via-transparent to-transparent" />
@@ -23,7 +23,7 @@ export default function Laboratorio() {
           <TwoToneHeading
             white={LAB.white}
             accent={LAB.accent}
-            className="mt-5 text-[clamp(2rem,3.9vw,4.3rem)] leading-[0.95]"
+            className="mt-5 text-[clamp(2rem,3.9vw,4.3rem)] leading-[1.05]"
           />
           <p className="mt-4 max-w-xs text-[clamp(1rem,1.4vw,1.45rem)] font-light leading-[1.5] text-white md:max-w-md md:leading-[1.2]">
             {LAB.text.map((l) => (<span key={l} className="block">{l}</span>))}
