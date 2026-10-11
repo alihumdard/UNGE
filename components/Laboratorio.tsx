@@ -5,9 +5,9 @@ import { IMAGES } from "@/lib/images";
 
 export default function Laboratorio() {
   return (
-    <section id="innovacion" className="flex flex-col bg-[#10161d] md:grid md:min-h-screen md:grid-cols-2">
-      {/* Left: image + text */}
-      <div className="relative flex min-h-[55vh] items-center overflow-hidden md:min-h-screen">
+    <section id="innovacion" className="flex flex-col-reverse bg-[#10161d] md:grid md:min-h-screen md:grid-cols-2">
+      {/* Right: image + text (shows right on desktop, bottom on mobile) */}
+      <div className="relative flex min-h-[55vh] items-center overflow-hidden md:order-2 md:min-h-screen">
         <div
           className="absolute inset-0 bg-cover bg-center bg-[center_40%]"
           style={{ backgroundImage: `url(${IMAGES.laboratorio})` }}
@@ -31,8 +31,8 @@ export default function Laboratorio() {
         </div>
       </div>
 
-      {/* Right: 3 rows */}
-      <div className="grid grid-rows-3 divide-y divide-white/10 bg-[#10161d]">
+      {/* Left: 3 rows (shows left on desktop, top on mobile) */}
+      <div className="grid grid-rows-3 divide-y divide-white/10 bg-[#10161d] md:order-1">
         {LAB.items.map((it) => (
           <div key={it.n} className="grid grid-cols-[28%_1fr] items-center">
             <div className="flex h-full items-center justify-center border-r border-white/10 py-8 text-[clamp(2rem,3.2vw,3.4rem)] font-light text-white/95 md:py-0">
