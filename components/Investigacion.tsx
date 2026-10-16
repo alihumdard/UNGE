@@ -13,7 +13,7 @@ export default function Investigacion() {
           accent={INVESTIGACION.accent}
           className="mt-5 text-[clamp(2rem,3.8vw,3.6rem)] leading-[1.02]"
         />
-        <p className="mt-4 max-w-md text-[clamp(1.05rem,1.5vw,1.45rem)] font-light leading-[1.5] text-white/90">
+        <p className="mt-4 max-w-md text-[clamp(1.15rem,1.7vw,1.65rem)] font-light leading-[1.5] text-white/90">
           {INVESTIGACION.subtitle}
         </p>
         <p className="mt-3 max-w-xl text-[0.85rem] font-light leading-[1.5] text-white/70">

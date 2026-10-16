@@ -20,7 +20,7 @@ export default function Entornos() {
           accent={ENTORNOS.accent}
           className="mt-6 text-[clamp(2rem,3.8vw,3.6rem)] leading-[0.95]"
         />
-        <p className="mt-5 max-w-md text-[clamp(1.05rem,1.5vw,1.45rem)] font-light leading-[1.5] text-white/95">
+        <p className="mt-5 max-w-md text-[clamp(1.15rem,1.7vw,1.65rem)] font-light leading-[1.5] text-white/95">
           {ENTORNOS.subtitle}
         </p>
 

@@ -22,7 +22,7 @@ export default function Invernaderos() {
             accent={INVERNADEROS.accent}
             className="mt-5 text-[clamp(2rem,3.8vw,3.6rem)] leading-[1.15]"
           />
-          <p className="mt-8 max-w-xs text-[clamp(1.05rem,1.5vw,1.45rem)] font-light leading-[1.5] text-white md:max-w-md">
+          <p className="mt-8 max-w-xs text-[clamp(1.15rem,1.7vw,1.65rem)] font-light leading-[1.5] text-white md:max-w-md">
             {INVERNADEROS.subtitle}
           </p>
           <p className="mt-4 max-w-xs text-[0.85rem] font-light leading-[1.5] text-white/75 md:max-w-sm">
