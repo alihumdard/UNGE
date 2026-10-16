@@ -18,7 +18,7 @@ export default function Laboratorio() {
         <div className="pointer-events-none absolute inset-x-0 top-2/3 border-t border-white/10" />
         <div className="pointer-events-none absolute inset-y-0 left-1/4 border-l border-white/10" />
 
-        <div className="relative z-10 w-full px-6 pb-28 pt-28 md:px-10 md:pb-32 md:pt-36 lg:px-12 lg:pb-40 lg:pt-44">
+        <div className="relative z-10 w-full px-6 pb-28 pt-28 md:px-8 md:pb-32 md:pt-36 lg:px-10 lg:pb-40 lg:pt-44 xl:px-12">
           <SectionIndex n={LAB.index} />
           <TwoToneHeading
             white={LAB.white}

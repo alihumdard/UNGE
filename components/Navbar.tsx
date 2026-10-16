@@ -13,22 +13,34 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when menu open
+  // Lock body scroll, and let Escape close the menu
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
+    if (!open) {
       document.body.style.overflow = "";
+      return;
     }
-    return () => { document.body.style.overflow = ""; };
+
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
   }, [open]);
 
   return (
     <>
       {/* Sticky top bar */}
-      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#0d1722]/90 backdrop-blur-md shadow-lg" : "bg-transparent"}`}>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "shadow-lg backdrop-blur-md" : ""}`}
+        style={{ backgroundColor: scrolled ? "rgba(13, 23, 34, 0.9)" : "transparent" }}
+      >
         <div
-          className={`mx-auto flex max-w-[1600px] items-center py-6 pl-6 pr-6 transition-all duration-300 md:py-8 md:pl-10 md:pr-12 lg:pl-12 lg:pr-12 xl:pl-14 xl:pr-16 ${
+          className={`mx-auto flex max-w-[1800px] items-center px-6 py-5 transition-all duration-300 md:px-8 md:py-7 lg:px-10 xl:px-12 ${
             scrolled ? "lg:py-4" : "lg:py-9"
           }`}
         >
@@ -55,44 +67,58 @@ export default function Navbar() {
           </nav>
 
           {/* Hamburger button — always right */}
+          {/* 44px touch target, with the bars centred inside it */}
           <button
-            className="ml-auto flex flex-col gap-[5px] lg:hidden"
+            className="relative -mr-2 ml-auto flex h-11 w-11 items-center justify-center lg:hidden"
             onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
-            <span className={`block h-px w-6 bg-white transition-all duration-300 origin-center ${open ? "translate-y-[7px] rotate-45" : ""}`} />
-            <span className={`block h-px w-6 bg-white transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`} />
-            <span className={`block h-px w-6 bg-white transition-all duration-300 origin-center ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
+            <span className="flex w-6 flex-col gap-[5px]">
+              <span className={`block h-px w-6 origin-center bg-white transition-all duration-300 ${open ? "translate-y-[6px] rotate-45" : ""}`} />
+              <span className={`block h-px w-6 bg-white transition-all duration-300 ${open ? "scale-x-0 opacity-0" : ""}`} />
+              <span className={`block h-px w-6 origin-center bg-white transition-all duration-300 ${open ? "-translate-y-[6px] -rotate-45" : ""}`} />
+            </span>
           </button>
         </div>
       </header>
 
       {/* Mobile fullscreen menu */}
       <div
-        className={`fixed inset-0 z-40 flex flex-col bg-[#0d1722] transition-all duration-300 lg:hidden ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        id="mobile-menu"
+        className={`fixed inset-0 z-40 overflow-y-auto transition-all duration-300 lg:hidden ${
+          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
+        style={{ backgroundColor: "#0d1722" }}
+        aria-hidden={!open}
       >
-        <div className="px-6 pt-24 pb-12">
-          <ul className="flex flex-col gap-7 text-[1.1rem] font-light tracking-widest text-white">
+        <div className="px-6 pb-16 pt-28">
+          <ul className="flex flex-col text-[1.15rem] font-light tracking-[0.12em] text-white">
             {NAV.map((i) => (
               <li key={i.label}>
                 <a
                   href={i.href}
                   onClick={() => setOpen(false)}
-                  className="block border-b border-white/10 pb-5 transition hover:text-accent"
+                  tabIndex={open ? 0 : -1}
+                  className="block border-b border-white/10 py-5 transition hover:text-accent"
                 >
                   {i.label}
                 </a>
               </li>
             ))}
           </ul>
+
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
-            className="mt-10 inline-flex items-center gap-4 rounded-full border border-white/70 px-6 py-3 text-[0.85rem] tracking-wide text-white transition hover:bg-white/10"
+            tabIndex={open ? 0 : -1}
+            className="group mt-10 inline-flex items-center gap-4 rounded-full border border-white/70 px-7 py-4 text-[0.85rem] font-light tracking-[0.08em] text-white transition hover:bg-white/10"
           >
-            CONTACTO
+            <span>CONTACTO</span>
+            <svg width="34" height="10" viewBox="0 0 48 10" fill="none" className="shrink-0 transition-transform group-hover:translate-x-1" aria-hidden>
+              <path d="M0 5H46M42 1l4 4-4 4" stroke="currentColor" strokeWidth="1" />
+            </svg>
           </a>
         </div>
       </div>

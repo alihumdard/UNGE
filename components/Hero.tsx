@@ -13,7 +13,7 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-[#0d1722]/40 md:bg-gradient-to-r md:from-[#0d1722] md:via-[#0d1722]/70 md:to-transparent" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-14 pt-32 md:px-10 md:pb-16 md:pt-36 lg:px-12 lg:pt-40 xl:px-14">
+      <div className="relative z-10 mx-auto w-full max-w-[1800px] px-6 pb-14 pt-32 md:px-8 md:pb-16 md:pt-36 lg:px-10 lg:pt-40 xl:px-12">
         <SectionIndex n={HERO.index} />
         <TwoToneHeading
           white={HERO.white}

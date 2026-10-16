@@ -12,7 +12,7 @@ export default function Ciencia() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0f1c2a] via-[#0f1c2a]/75 to-[#0f1c2a]/25 md:via-[#0f1c2a] md:via-45% md:to-transparent" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-col px-6 pb-28 pt-44 md:px-10 md:pb-32 md:pt-48 lg:px-12 lg:pb-40 lg:pt-56 xl:px-14">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1800px] flex-col px-6 pb-28 pt-44 md:px-8 md:pb-32 md:pt-48 lg:px-10 lg:pb-40 lg:pt-56 xl:px-12">
         <SectionIndex n={CIENCIA.index} />
         <TwoToneHeading
           white={CIENCIA.white}

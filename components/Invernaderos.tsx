@@ -2,56 +2,71 @@ import SectionIndex from "./SectionIndex";
 import TwoToneHeading from "./TwoToneHeading";
 import PillButton from "./PillButton";
 import { INVERNADEROS } from "@/data/content";
-import { IMAGES } from "@/lib/images";
 
 export default function Invernaderos() {
   return (
-    <section className="flex flex-col bg-[#10161d] md:grid md:min-h-screen md:grid-cols-2">
-      <div className="relative flex min-h-[70vh] items-center overflow-hidden md:min-h-screen">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${IMAGES.invernaderos})` }}
+    <section id="invernaderos" className="relative overflow-hidden bg-[#10161d]">
+      {/* Site footage runs behind the whole section */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src="/video/cultivo.mp4"
+        poster="/video/cultivo-poster.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#10161d] via-[#10161d]/15 via-30% to-[#10161d]" />
+
+      <div className="relative z-10 mx-auto max-w-[1800px] px-6 pb-16 pt-28 md:px-8 md:pb-20 md:pt-36 lg:px-10 lg:pb-24 lg:pt-44 xl:px-12">
+        <SectionIndex n={INVERNADEROS.index} />
+
+        <TwoToneHeading
+          inline
+          white={INVERNADEROS.white}
+          accent={INVERNADEROS.accent}
+          className="mt-5 text-[clamp(2.2rem,4.8vw,5.4rem)] leading-[0.95] md:mt-6"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#10161d]/90 via-[#10161d]/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#10161d]/60 via-transparent to-transparent" />
 
-        <div className="relative z-10 w-full px-6 py-16 md:px-10 lg:px-12">
-          <SectionIndex n={INVERNADEROS.index} />
-          <TwoToneHeading
-            white={INVERNADEROS.white}
-            accent={INVERNADEROS.accent}
-            className="mt-5 text-[clamp(2rem,3.8vw,3.6rem)] leading-[1.15]"
-          />
-          <p className="mt-8 max-w-xs text-[clamp(1.15rem,1.7vw,1.65rem)] font-light leading-[1.5] text-white md:max-w-md">
-            {INVERNADEROS.subtitle}
-          </p>
-          <p className="mt-4 max-w-xs text-[0.85rem] font-light leading-[1.5] text-white/75 md:max-w-sm">
-            {INVERNADEROS.text.map((l) => (<span key={l} className="block">{l}</span>))}
-          </p>
-        </div>
-      </div>
+        {/* Lead paragraph sits wide and alone, so the footage stays visible
+            around it rather than being boxed in by a column of copy */}
+        <p className="mt-8 max-w-[34ch] text-[clamp(1.3rem,2vw,2.3rem)] font-light leading-[1.3] tracking-[0.01em] text-white md:mt-10">
+          {INVERNADEROS.subtitle}
+        </p>
 
-      <div className="flex flex-col bg-[#10161d]">
-        <div className="grid grid-cols-1 gap-px divide-white/10 bg-white/10 sm:grid-cols-2">
+        <p className="mt-6 max-w-[62ch] text-[clamp(0.95rem,1.05vw,1.1rem)] font-light leading-[1.7] tracking-[0.01em] text-white/55 md:mt-8">
+          {INVERNADEROS.text.join(" ")}
+        </p>
+
+        {/* Grilla de cuatro capacidades */}
+        <div className="mt-12 grid grid-cols-1 gap-px bg-white/10 sm:grid-cols-2 md:mt-16 lg:grid-cols-4">
           {INVERNADEROS.items.map((it) => (
-            <div key={it.n} className="flex flex-col justify-center bg-[#10161d] p-8">
-              <span className="text-[0.95rem] font-light text-white/50">{it.n}</span>
-              <div className="mt-4 h-px w-8 bg-white/80" />
-              <h3 className="mt-4 font-heading text-[clamp(1rem,1.5vw,1.4rem)] font-bold uppercase leading-tight text-white">
+            <div
+              key={it.n}
+              className="flex min-h-[220px] flex-col bg-[#10161d]/85 p-6 backdrop-blur-md md:min-h-[260px] md:p-7 xl:p-8"
+            >
+              <span className="text-[0.8rem] font-light leading-none tracking-[0.14em] text-white/45">
+                {it.n}
+              </span>
+              <div className="mb-4 mt-3.5 h-px w-7 bg-white/50" />
+              <h3 className="font-heading text-[clamp(1.05rem,1.15vw,1.3rem)] font-semibold uppercase leading-[1.2] tracking-[0.02em] text-white">
                 {it.title}
               </h3>
-              <p className="mt-3 text-[0.85rem] font-light leading-[1.4] text-white/85">
-                {it.text.map((l) => (<span key={l} className="block">{l}</span>))}
+              <p className="mt-2.5 text-[clamp(0.88rem,0.92vw,0.98rem)] font-light leading-[1.6] tracking-[0.01em] text-white/65">
+                {it.text.join(" ")}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="p-8 py-10 md:py-12">
-          <p className="max-w-md text-[0.9rem] font-light italic leading-[1.5] text-white/80">
-            &ldquo;{INVERNADEROS.cierre}&rdquo;
+        <div className="mt-12 flex flex-col gap-6 border-t border-white/15 pt-8 md:mt-14 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+          <p className="max-w-[52ch] text-[clamp(1rem,1.2vw,1.3rem)] font-light italic leading-[1.55] tracking-[0.01em] text-white/80">
+            {INVERNADEROS.cierre}
           </p>
-          <div className="mt-6 flex flex-wrap gap-4">
+
+          <div className="flex flex-wrap gap-3 lg:shrink-0">
             {INVERNADEROS.buttons.map((b) => (
               <PillButton key={b.label} label={b.label} href={b.href} />
             ))}

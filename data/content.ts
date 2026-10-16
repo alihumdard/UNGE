@@ -1,8 +1,37 @@
 export const NAV = [
   { label: "CIENCIA", href: "#ciencia" },
   { label: "PRODUCTOS", href: "#produccion" },
-  { label: "INNOVACIÓN", href: "#innovacion" },
+  { label: "INNOVACIÓN", href: "#invernaderos" },
   { label: "NOSOTROS", href: "#nosotros" },
+];
+
+// Footer groups the anchors more finely than the top nav, which only carries
+// the four primary entries.
+export const FOOTER_LINKS = [
+  {
+    title: "Ecosistema",
+    items: [
+      { label: "Un ecosistema 360", href: "#ecosistema" },
+      { label: "Tres entornos de cultivo", href: "#produccion" },
+      { label: "Invernaderos inteligentes", href: "#invernaderos" },
+    ],
+  },
+  {
+    title: "Ciencia",
+    items: [
+      { label: "Nuestra ciencia", href: "#ciencia" },
+      { label: "Del laboratorio a la vida real", href: "#innovacion" },
+      { label: "Investigación que se aplica", href: "#investigacion" },
+    ],
+  },
+  {
+    title: "Proyecto",
+    items: [
+      { label: "Una red que genera valor", href: "#red" },
+      { label: "Crecer también es incluir", href: "#impacto" },
+      { label: "Nosotros", href: "#nosotros" },
+    ],
+  },
 ];
 
 export const HERO = {
@@ -62,7 +91,7 @@ export const ENTORNOS = {
   ],
   text: ["Los tres nodos forman parte de una estructura concebida para responder a necesidades", "diferentes de producción, observación y mejora de procesos."],
   buttons: [
-    { label: "VER CÓMO APLICAMOS LA INNOVACIÓN", href: "#innovacion" },
+    { label: "VER CÓMO APLICAMOS LA INNOVACIÓN", href: "#invernaderos" },
     { label: "CONSULTAR POR VINCULACIONES", href: "#contacto" },
   ],
 };
@@ -97,8 +126,9 @@ export const INVESTIGACION = {
     { n: "02", title: "CARACTERIZACIÓN", text: ["Trabajo técnico orientado al análisis de", "cannabinoides y terpenos, de acuerdo con", "capacidades y protocolos disponibles."] },
     { n: "03", title: "CALIDAD Y PROTOCOLOS", text: ["Criterios de control, documentación y", "estandarización que permitan comparar resultados", "y fortalecer la consistencia del trabajo."] },
   ],
+  cierre: "El modelo contempla el apoyo técnico de CILUM para avanzar en estos ejes, sujeto a la descripción institucional final aprobada.",
   buttons: [
-    { label: "EXPLORAR LA INNOVACIÓN", href: "#innovacion" },
+    { label: "EXPLORAR LA INNOVACIÓN", href: "#invernaderos" },
     { label: "CONTACTAR AL EQUIPO", href: "#contacto" },
   ],
 };
@@ -166,6 +196,7 @@ export const CRECER = {
   ambiental: {
     title: "UNA MIRADA AMBIENTAL",
     text: ["El proyecto también apunta a medir consumo de agua, energía e insumos y avanzar hacia", "estándares de calidad y gestión ambiental."],
+    nota: "No se comunican sellos ISO como obtenidos.",
   },
   cierre: "El crecimiento cobra más sentido cuando abre oportunidades para otras personas.",
   buttons: [
