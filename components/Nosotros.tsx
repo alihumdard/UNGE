@@ -72,7 +72,7 @@ export default function Nosotros() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-3 md:mt-12">
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:mt-12">
           {NOSOTROS.buttons.map((b) => (
             <PillButton key={b.label} label={b.label} href={b.href} />
           ))}

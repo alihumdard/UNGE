@@ -60,7 +60,7 @@ export default function Investigacion() {
             {INVESTIGACION.cierre}
           </p>
 
-          <div className="flex flex-wrap gap-3 lg:shrink-0">
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap lg:shrink-0">
             {INVESTIGACION.buttons.map((b) => (
               <PillButton key={b.label} label={b.label} href={b.href} />
             ))}

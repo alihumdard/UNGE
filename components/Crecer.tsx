@@ -35,13 +35,17 @@ export default function Crecer() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
             {CRECER.items.map((it) => (
               <div key={it.n} className="relative">
-                <span className="relative block h-3.5 w-3.5 rounded-full border border-accent bg-[#0f1c2a]" />
+                {/* Dot sits beside the number on phones, where there is no
+                    track to anchor it, and above it once the track appears */}
+                <div className="flex items-center gap-3 md:block">
+                  <span className="block h-3 w-3 shrink-0 rounded-full border border-accent bg-[#0f1c2a] md:h-3.5 md:w-3.5" />
 
-                <span className="mt-6 block text-[0.8rem] font-light leading-none tracking-[0.14em] text-white/45">
-                  {it.n}
-                </span>
+                  <span className="block text-[0.8rem] font-light leading-none tracking-[0.14em] text-white/45 md:mt-6">
+                    {it.n}
+                  </span>
+                </div>
 
-                <h3 className="mt-4 font-heading text-[clamp(1.05rem,1.3vw,1.45rem)] font-semibold uppercase leading-[1.2] tracking-[0.02em] text-white">
+                <h3 className="mt-3 font-heading text-[clamp(1.05rem,1.3vw,1.45rem)] font-semibold uppercase leading-[1.2] tracking-[0.02em] text-white md:mt-4">
                   {it.title}
                 </h3>
 
@@ -90,7 +94,7 @@ export default function Crecer() {
             {CRECER.cierre}
           </p>
 
-          <div className="flex flex-wrap gap-3 lg:shrink-0">
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap lg:shrink-0">
             {CRECER.buttons.map((b) => (
               <PillButton key={b.label} label={b.label} href={b.href} />
             ))}

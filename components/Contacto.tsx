@@ -59,7 +59,7 @@ export default function Contacto() {
 
         <div className="mt-12 grid grid-cols-1 items-start gap-8 border-t border-white/15 pt-10 md:mt-14 md:pt-12 lg:grid-cols-[1.5fr_1fr] lg:gap-12 xl:gap-16">
           {/* Form */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 lg:p-10">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 sm:p-8 lg:p-10">
             {submitted ? (
               <div className="flex min-h-[360px] flex-col items-center justify-center text-center">
                 <span className="flex h-14 w-14 items-center justify-center rounded-full border border-accent/60">
@@ -83,23 +83,23 @@ export default function Contacto() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-5">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
                   <label className="flex flex-col gap-2">
                     <span className="text-[0.8rem] font-light text-white/60">Nombre y apellido *</span>
-                    <input name="nombre" type="text" required className="rounded-full border border-white/15 bg-white/[0.04] px-5 py-3.5 text-[0.95rem] text-white outline-none transition placeholder:text-white/30 focus:border-accent focus:bg-white/[0.07]" />
+                    <input name="nombre" type="text" required className="rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-[0.92rem] sm:py-3.5 sm:text-[0.95rem] text-white outline-none transition placeholder:text-white/30 focus:border-accent focus:bg-white/[0.07]" />
                   </label>
                   <label className="flex flex-col gap-2">
                     <span className="text-[0.8rem] font-light text-white/60">Organización (opcional)</span>
-                    <input name="organizacion" type="text" className="rounded-full border border-white/15 bg-white/[0.04] px-5 py-3.5 text-[0.95rem] text-white outline-none transition placeholder:text-white/30 focus:border-accent focus:bg-white/[0.07]" />
+                    <input name="organizacion" type="text" className="rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-[0.92rem] sm:py-3.5 sm:text-[0.95rem] text-white outline-none transition placeholder:text-white/30 focus:border-accent focus:bg-white/[0.07]" />
                   </label>
                   <label className="flex flex-col gap-2">
                     <span className="text-[0.8rem] font-light text-white/60">Correo electrónico *</span>
-                    <input name="email" type="email" required className="rounded-full border border-white/15 bg-white/[0.04] px-5 py-3.5 text-[0.95rem] text-white outline-none transition placeholder:text-white/30 focus:border-accent focus:bg-white/[0.07]" />
+                    <input name="email" type="email" required className="rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-[0.92rem] sm:py-3.5 sm:text-[0.95rem] text-white outline-none transition placeholder:text-white/30 focus:border-accent focus:bg-white/[0.07]" />
                   </label>
                   <label className="flex flex-col gap-2">
                     <span className="text-[0.8rem] font-light text-white/60">Teléfono (opcional)</span>
-                    <input name="telefono" type="tel" className="rounded-full border border-white/15 bg-white/[0.04] px-5 py-3.5 text-[0.95rem] text-white outline-none transition placeholder:text-white/30 focus:border-accent focus:bg-white/[0.07]" />
+                    <input name="telefono" type="tel" className="rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-[0.92rem] sm:py-3.5 sm:text-[0.95rem] text-white outline-none transition placeholder:text-white/30 focus:border-accent focus:bg-white/[0.07]" />
                   </label>
                 </div>
 
@@ -110,7 +110,7 @@ export default function Contacto() {
                       name="motivo"
                       required
                       defaultValue=""
-                      className="w-full appearance-none rounded-full border border-white/15 bg-white/[0.04] px-5 py-3.5 pr-12 text-[0.95rem] text-white outline-none transition focus:border-accent focus:bg-white/[0.07] [&>option]:bg-[#0d1722]"
+                      className="w-full appearance-none rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 pr-12 text-[0.92rem] sm:py-3.5 sm:text-[0.95rem] text-white outline-none transition focus:border-accent focus:bg-white/[0.07] [&>option]:bg-[#0d1722]"
                     >
                       <option value="" disabled>Seleccionar...</option>
                       {CONTACTO.motivos.map((m) => (<option key={m} value={m}>{m}</option>))}
@@ -130,7 +130,7 @@ export default function Contacto() {
 
                 <label className="flex flex-col gap-2">
                   <span className="text-[0.8rem] font-light text-white/60">Mensaje *</span>
-                  <textarea name="mensaje" required rows={4} className="resize-none rounded-2xl border border-white/15 bg-white/[0.04] px-5 py-4 text-[0.95rem] text-white outline-none transition placeholder:text-white/30 focus:border-accent focus:bg-white/[0.07]" />
+                  <textarea name="mensaje" required rows={4} className="resize-none rounded-2xl border border-white/15 bg-white/[0.04] px-5 py-3.5 text-[0.92rem] sm:py-4 sm:text-[0.95rem] text-white outline-none transition placeholder:text-white/30 focus:border-accent focus:bg-white/[0.07]" />
                 </label>
 
                 <label className="flex cursor-pointer items-center gap-3 text-[0.8rem] font-light leading-[1.4] text-white/70">
@@ -141,7 +141,7 @@ export default function Contacto() {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="group mt-2 inline-flex w-fit items-center gap-6 self-end rounded-full border border-white/70 bg-white/5 px-7 py-4 text-[0.8rem] font-light tracking-[0.08em] text-white transition hover:bg-white/10 disabled:opacity-60"
+                  className="group mt-2 inline-flex w-full items-center justify-between gap-4 rounded-full sm:w-fit sm:justify-start sm:gap-6 sm:self-end border border-white/70 bg-white/5 px-7 py-4 text-[0.8rem] font-light tracking-[0.08em] text-white transition hover:bg-white/10 disabled:opacity-60"
                 >
                   <span>{sending ? "ENVIANDO…" : "ENVIAR MENSAJE"}</span>
                   <svg width="48" height="10" viewBox="0 0 48 10" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden>
@@ -153,7 +153,7 @@ export default function Contacto() {
           </div>
 
           {/* Direct contact */}
-          <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8">
+          <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.02] p-5 sm:p-8">
             <h3 className="font-heading text-[clamp(1.05rem,1.3vw,1.45rem)] font-semibold uppercase leading-[1.2] tracking-[0.02em] text-white">
               Contacto directo
             </h3>

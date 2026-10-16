@@ -74,7 +74,7 @@ export default function Red() {
                 href={RED.buttons[0].href}
                 className="group inline-flex items-center gap-3 border-b border-accent pb-2 text-[0.78rem] font-light leading-none tracking-[0.1em] text-accent transition hover:gap-4 sm:text-[0.82rem]"
               >
-                <span className="whitespace-nowrap">{RED.buttons[0].label}</span>
+                <span className="sm:whitespace-nowrap">{RED.buttons[0].label}</span>
                 <svg width="26" height="8" viewBox="0 0 26 8" fill="none" className="shrink-0" aria-hidden>
                   <path d="M0 4h24M21 1l3 3-3 3" stroke="currentColor" strokeWidth="1" />
                 </svg>
@@ -84,7 +84,7 @@ export default function Red() {
                 href={RED.buttons[1].href}
                 className="group inline-flex items-center gap-3 border-b border-white/25 pb-2 text-[0.78rem] font-light leading-none tracking-[0.1em] text-white/70 transition hover:gap-4 hover:border-white/60 hover:text-white sm:text-[0.82rem]"
               >
-                <span className="whitespace-nowrap">{RED.buttons[1].label}</span>
+                <span className="sm:whitespace-nowrap">{RED.buttons[1].label}</span>
                 <svg width="26" height="8" viewBox="0 0 26 8" fill="none" className="shrink-0" aria-hidden>
                   <path d="M0 4h24M21 1l3 3-3 3" stroke="currentColor" strokeWidth="1" />
                 </svg>

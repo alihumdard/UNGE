@@ -71,7 +71,7 @@ export default function Ecosistema() {
             {ECOSISTEMA.cierre}
           </p>
 
-          <div className="flex flex-wrap gap-4 lg:shrink-0">
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4 lg:shrink-0">
             {ECOSISTEMA.buttons.map((b) => (
               <PillButton key={b.label} label={b.label} href={b.href} />
             ))}

@@ -4,10 +4,10 @@ import { FOOTER_LINKS, CONTACTO } from "@/data/content";
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#0a1017] text-white">
-      <div className="mx-auto max-w-[1800px] px-6 py-16 md:px-8 md:py-20 lg:px-10 xl:px-12">
+      <div className="mx-auto max-w-[1800px] px-6 py-12 md:px-8 md:py-20 lg:px-10 xl:px-12">
         {/* Brand sits on its own line on narrow screens; the three link
             groups stay side by side from the smallest breakpoint up */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:gap-10 xl:gap-14">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:gap-10 xl:gap-14">
           <div className="flex flex-col gap-5">
             <Logo className="h-10 w-auto md:h-11" priority={false} />
 
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
 
           {/* Three link groups: a row of three even on phones */}
-          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:col-span-3 lg:grid-cols-3 lg:gap-10 xl:gap-14">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-8 sm:gap-x-8 lg:col-span-3 lg:grid-cols-3 lg:gap-10 xl:gap-14">
             {FOOTER_LINKS.map((group) => (
               <div key={group.title} className="flex flex-col gap-4">
                 <span className="text-[0.68rem] font-light uppercase leading-none tracking-[0.18em] text-white/35">
@@ -68,7 +68,7 @@ export default function Footer() {
         </div>
 
         {/* Contact strip */}
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between sm:gap-8 md:mt-16">
+        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between sm:gap-8 md:mt-16">
           <a
             href={`mailto:${CONTACTO.email}`}
             className="text-[clamp(1rem,1.3vw,1.35rem)] font-light tracking-[0.01em] text-white/80 transition hover:text-white"
