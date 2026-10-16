@@ -13,14 +13,14 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-[#0d1722]/40 md:bg-gradient-to-r md:from-[#0d1722] md:via-[#0d1722]/70 md:to-transparent" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-24 pt-32 md:px-10 md:pb-20 md:pt-28 lg:px-12">
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-14 pt-32 md:px-10 md:pb-16 md:pt-36 lg:px-12 lg:pt-40 xl:px-14">
         <SectionIndex n={HERO.index} />
         <TwoToneHeading
           white={HERO.white}
           accent={HERO.accent}
-          className="mt-6 text-[clamp(2.4rem,5.4vw,6rem)]"
+          className="mt-5 text-[clamp(2.35rem,5.85vw,6.35rem)] leading-[0.95] md:mt-6"
         />
-        <div className="mt-10 md:mt-14"><PillButton label={HERO.cta} href="#ciencia" /></div>
+        <div className="mt-8 md:mt-10"><PillButton label={HERO.cta} href="#ciencia" /></div>
       </div>
     </section>
   );

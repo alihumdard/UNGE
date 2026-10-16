@@ -27,12 +27,16 @@ export default function Navbar() {
     <>
       {/* Sticky top bar */}
       <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#0d1722]/90 backdrop-blur-md shadow-lg" : "bg-transparent"}`}>
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-6 md:px-10 lg:px-12">
-          <Logo />
+        <div
+          className={`mx-auto flex max-w-[1600px] items-center py-6 pl-6 pr-6 transition-all duration-300 md:py-8 md:pl-10 md:pr-12 lg:pl-12 lg:pr-12 xl:pl-14 xl:pr-16 ${
+            scrolled ? "lg:py-4" : "lg:py-9"
+          }`}
+        >
+          <Logo scrolled={scrolled} />
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-8 lg:flex lg:gap-9">
-            <ul className="flex items-center gap-8 text-[0.85rem] font-light tracking-wide text-white">
+          <nav className="mt-1.5 hidden items-center gap-8 lg:ml-20 lg:flex lg:gap-9 xl:ml-28 xl:gap-10">
+            <ul className="flex items-center gap-8 text-[1.05rem] font-light tracking-[0.04em] text-white lg:gap-9 xl:gap-10">
               {NAV.map((i) => (
                 <li key={i.label}>
                   <a href={i.href} className="transition hover:text-accent">{i.label}</a>
@@ -41,11 +45,11 @@ export default function Navbar() {
             </ul>
             <a
               href="#contacto"
-              className="group inline-flex items-center gap-5 rounded-full border border-white/70 px-6 py-3.5 text-[0.85rem] font-light tracking-wide text-white transition hover:bg-white/10"
+              className="group ml-4 inline-flex items-center gap-5 rounded-full border border-white/70 px-7 py-[1.15rem] text-[1rem] font-light leading-none tracking-[0.06em] text-white transition hover:bg-white/10 lg:ml-8 xl:ml-10"
             >
               CONTACTO
-              <svg width="48" height="10" viewBox="0 0 48 10" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden>
-                <path d="M0 5H46M42 1l4 4-4 4" stroke="currentColor" strokeWidth="1" />
+              <svg width="62" height="10" viewBox="0 0 62 10" fill="none" className="shrink-0 transition-transform group-hover:translate-x-1" aria-hidden>
+                <path d="M0 5H60M56 1l4 4-4 4" stroke="currentColor" strokeWidth="1" />
               </svg>
             </a>
           </nav>

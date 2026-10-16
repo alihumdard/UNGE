@@ -18,9 +18,9 @@ const config: Config = {
         steelGray: "#959596",
       },
       fontFamily: {
-        logo: ["Forma DJR Deck", "Arial", "sans-serif"],
-        heading: ["ITC Avant Garde Gothic Pro", "var(--font-heading)", "Arial", "sans-serif"],
-        body: ["Spent VF", "var(--font-body)", "Arial", "sans-serif"],
+        logo: ["Forma DJR Text", "Arial", "sans-serif"],
+        heading: ["Helvetica", "Arial", "Helvetica Neue", "sans-serif"],
+        body: ["Spent VF", "Forma DJR Text", "var(--font-body)", "Arial", "sans-serif"],
       },
     },
   },

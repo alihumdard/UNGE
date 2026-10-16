@@ -1,6 +1,6 @@
 export const NAV = [
   { label: "CIENCIA", href: "#ciencia" },
-  { label: "PRODUCCIÓN", href: "#produccion" },
+  { label: "PRODUCTOS", href: "#produccion" },
   { label: "INNOVACIÓN", href: "#innovacion" },
   { label: "NOSOTROS", href: "#nosotros" },
 ];

@@ -10,16 +10,16 @@ export default function Ciencia() {
         className="absolute inset-y-0 right-0 w-full bg-cover bg-center md:bg-left md:w-[52%]"
         style={{ backgroundImage: `url(${IMAGES.ciencia})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0f1c2a] via-[#0f1c2a]/92 to-[#0f1c2a]/60 md:via-[#0f1c2a] md:via-45% md:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0f1c2a] via-[#0f1c2a]/75 to-[#0f1c2a]/25 md:via-[#0f1c2a] md:via-45% md:to-transparent" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-col justify-center px-6 py-16 md:px-10 md:py-0 lg:px-12">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-col px-6 pb-28 pt-44 md:px-10 md:pb-32 md:pt-48 lg:px-12 lg:pb-40 lg:pt-56 xl:px-14">
         <SectionIndex n={CIENCIA.index} />
         <TwoToneHeading
           white={CIENCIA.white}
           accent={CIENCIA.accent}
-          className="mt-6 text-[clamp(3rem,6.6vw,7.2rem)] leading-[0.92]"
+          className="mt-5 text-[clamp(2.8rem,6.9vw,7.5rem)] leading-[0.95] md:mt-6"
         />
-        <p className="mt-5 max-w-sm text-[clamp(1.15rem,1.7vw,1.65rem)] font-light leading-[1.5] text-white/95 md:mt-8 md:max-w-md md:leading-[1.3]">
+        <p className="mt-5 max-w-md text-[clamp(1.3rem,1.95vw,1.9rem)] font-light leading-[1.5] text-white/95 md:mt-8 md:max-w-lg md:leading-[1.3]">
           {CIENCIA.text.map((l) => (<span key={l} className="block">{l}</span>))}
         </p>
       </div>

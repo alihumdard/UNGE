@@ -1,47 +1,41 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "ITC Avant Garde Gothic Pro";
-  src: url("/fonts/itc-avant-garde/ITC Avant Garde Gothic Pro-Book.otf") format("opentype");
+  font-family: "Forma DJR Text";
+  src: url("/fonts/forma-djr/FormaDJRText-Light-Testing.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Forma DJR Text";
+  src: url("/fonts/forma-djr/FormaDJRText-Regular-Testing.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
-  font-family: "ITC Avant Garde Gothic Pro";
-  src: url("/fonts/itc-avant-garde/ITC Avant Garde Gothic Pro-Medium.otf") format("opentype");
+  font-family: "Forma DJR Text";
+  src: url("/fonts/forma-djr/FormaDJRText-Medium-Testing.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
-  font-family: "ITC Avant Garde Gothic Pro";
-  src: url("/fonts/itc-avant-garde/ITC Avant Garde Gothic Pro-Demi.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "ITC Avant Garde Gothic Pro";
-  src: url("/fonts/itc-avant-garde/ITC Avant Garde Gothic Pro-Bold.otf") format("opentype");
+  font-family: "Forma DJR Text";
+  src: url("/fonts/forma-djr/FormaDJRText-Bold-Testing.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
-  font-family: "Forma DJR Deck";
-  src: url("/fonts/forma-djr/FormaDJRText-Bold-Testing.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Forma DJR Deck";
-  src: url("/fonts/forma-djr/FormaDJRText-ExtraBold-Testing.otf") format("opentype");
+  font-family: "Forma DJR Text";
+  src: url("/fonts/forma-djr/FormaDJRText-ExtraBold-Testing.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
+
 
 @theme {
   --color-carbon: #1D1D1B;
@@ -51,13 +45,13 @@
   --color-accent: #B7C6DD;
   --color-bg: #0d1722;
   --color-bgAlt: #0f1c2a;
-  --font-logo: "Forma DJR Deck", Arial, sans-serif;
-  --font-heading: "ITC Avant Garde Gothic Pro", var(--font-heading-var), Arial, sans-serif;
-  --font-body: "Spent VF", var(--font-body-var), Arial, sans-serif;
+  --font-logo: "Forma DJR Text", Arial, sans-serif;
+  --font-heading: Helvetica, Arial, "Helvetica Neue", sans-serif;
+  --font-body: "Forma DJR Text", Arial, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
-body { background: #0d1722; color: #fff; font-family: "Spent VF", var(--font-body-var), Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { background: #0d1722; color: #fff; font-family: "Forma DJR Text", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 
-.h-display { font-family: "ITC Avant Garde Gothic Pro", var(--font-heading-var), Arial, sans-serif; font-weight: 600; text-transform: uppercase; line-height: 0.98; letter-spacing: -0.01em; }
-.logo-type { font-family: "Forma DJR Deck", Arial, sans-serif; }
+.h-display { font-family: Helvetica, Arial, "Helvetica Neue", sans-serif; font-weight: 600; text-transform: uppercase; line-height: 0.98; letter-spacing: -0.01em; }
+.logo-type { font-family: "Forma DJR Text", Arial, sans-serif; }

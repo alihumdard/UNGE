@@ -29,3 +29,6 @@ _req_check3/
 _img_tmp/
 _img_tmp2/
 _img_tmp3/
+
+# client source material (not part of the app)
+unge guide material/
