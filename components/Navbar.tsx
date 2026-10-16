@@ -69,16 +69,16 @@ export default function Navbar() {
           {/* Hamburger button — always right */}
           {/* 44px touch target, with the bars centred inside it */}
           <button
-            className="relative -mr-2 ml-auto flex h-11 w-11 items-center justify-center lg:hidden"
+            className="relative -mr-1 ml-auto flex h-12 w-12 items-center justify-center lg:hidden"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={open}
             aria-controls="mobile-menu"
           >
-            <span className="flex w-6 flex-col gap-[5px]">
-              <span className={`block h-px w-6 origin-center bg-white transition-all duration-300 ${open ? "translate-y-[6px] rotate-45" : ""}`} />
-              <span className={`block h-px w-6 bg-white transition-all duration-300 ${open ? "scale-x-0 opacity-0" : ""}`} />
-              <span className={`block h-px w-6 origin-center bg-white transition-all duration-300 ${open ? "-translate-y-[6px] -rotate-45" : ""}`} />
+            <span className="flex w-8 flex-col gap-[7px]">
+              <span className={`block h-0.5 w-8 origin-center rounded-full bg-white transition-all duration-300 ${open ? "translate-y-[9px] rotate-45" : ""}`} />
+              <span className={`block h-0.5 w-8 rounded-full bg-white transition-all duration-300 ${open ? "scale-x-0 opacity-0" : ""}`} />
+              <span className={`block h-0.5 w-8 origin-center rounded-full bg-white transition-all duration-300 ${open ? "-translate-y-[9px] -rotate-45" : ""}`} />
             </span>
           </button>
         </div>

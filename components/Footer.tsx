@@ -68,20 +68,20 @@ export default function Footer() {
         </div>
 
         {/* Contact strip */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between sm:gap-8 md:mt-16">
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-white/10 pt-7 sm:gap-8 md:mt-16">
           <a
             href={`mailto:${CONTACTO.email}`}
-            className="text-[clamp(1rem,1.3vw,1.35rem)] font-light tracking-[0.01em] text-white/80 transition hover:text-white"
+            className="text-[clamp(0.92rem,1.3vw,1.35rem)] font-light tracking-[0.01em] text-white/80 transition hover:text-white"
           >
             {CONTACTO.email}
           </a>
 
           <a
             href="#contacto"
-            className="group inline-flex items-center gap-3 self-start border-b border-white/30 pb-1.5 text-[0.78rem] font-light leading-none tracking-[0.1em] text-white/70 transition hover:gap-4 hover:border-white/60 hover:text-white sm:self-auto"
+            className="group inline-flex shrink-0 items-center gap-2.5 border-b border-white/30 pb-1.5 text-[0.72rem] font-light leading-none tracking-[0.08em] text-white/70 transition hover:gap-4 hover:border-white/60 hover:text-white sm:text-[0.78rem] sm:tracking-[0.1em]"
           >
             <span>ESCRIBINOS</span>
-            <svg width="26" height="8" viewBox="0 0 26 8" fill="none" className="shrink-0" aria-hidden>
+            <svg width="18" height="8" viewBox="0 0 26 8" fill="none" className="w-[18px] shrink-0 sm:w-[26px]" aria-hidden>
               <path d="M0 4h24M21 1l3 3-3 3" stroke="currentColor" strokeWidth="1" />
             </svg>
           </a>
