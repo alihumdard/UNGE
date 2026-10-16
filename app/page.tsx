@@ -2,6 +2,14 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Ciencia from "@/components/Ciencia";
 import Laboratorio from "@/components/Laboratorio";
+import Ecosistema from "@/components/Ecosistema";
+import Entornos from "@/components/Entornos";
+import Invernaderos from "@/components/Invernaderos";
+import Investigacion from "@/components/Investigacion";
+import Red from "@/components/Red";
+import Crecer from "@/components/Crecer";
+import Nosotros from "@/components/Nosotros";
+import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -11,6 +19,14 @@ export default function Home() {
       <Hero />
       <Ciencia />
       <Laboratorio />
+      <Ecosistema />
+      <Entornos />
+      <Invernaderos />
+      <Investigacion />
+      <Red />
+      <Crecer />
+      <Nosotros />
+      <Contacto />
       <Footer />
     </main>
   );

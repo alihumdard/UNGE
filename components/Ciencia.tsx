@@ -19,7 +19,7 @@ export default function Ciencia() {
           accent={CIENCIA.accent}
           className="mt-6 text-[clamp(3rem,6.6vw,7.2rem)] leading-[0.92]"
         />
-        <p className="mt-5 max-w-sm text-[clamp(0.95rem,1.25vw,1.25rem)] font-light leading-[1.5] text-white/95 md:mt-8 md:max-w-md md:leading-[1.2]">
+        <p className="mt-5 max-w-sm text-[clamp(1.05rem,1.5vw,1.45rem)] font-light leading-[1.5] text-white/95 md:mt-8 md:max-w-md md:leading-[1.3]">
           {CIENCIA.text.map((l) => (<span key={l} className="block">{l}</span>))}
         </p>
       </div>

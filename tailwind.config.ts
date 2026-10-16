@@ -8,10 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: { bg: "#0F1A26", bgAlt: "#141A20", accent: "#B5C3DC" },
+      colors: {
+        bg: "#0d1722",
+        bgAlt: "#0f1c2a",
+        accent: "#B7C6DD",
+        carbon: "#1D1D1B",
+        traceableBlue: "#212E4E",
+        clinicalMist: "#B7C6DD",
+        steelGray: "#959596",
+      },
       fontFamily: {
-        heading: ["var(--font-heading)", "Arial", "sans-serif"],
-        body: ["var(--font-body)", "Arial", "sans-serif"],
+        logo: ["Forma DJR Deck", "Arial", "sans-serif"],
+        heading: ["ITC Avant Garde Gothic Pro", "var(--font-heading)", "Arial", "sans-serif"],
+        body: ["Spent VF", "var(--font-body)", "Arial", "sans-serif"],
       },
     },
   },

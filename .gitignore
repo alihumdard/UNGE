@@ -17,3 +17,15 @@ npm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# client source assets (not part of the app)
+unge internal.zip
+_photos_recheck/
+_brand_extract/
+_photos_review/
+_req_check/
+_req_check2/
+_req_check3/
+_img_tmp/
+_img_tmp2/
+_img_tmp3/
