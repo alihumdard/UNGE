@@ -7,8 +7,9 @@ import { CONTACTO } from "@/data/content";
 export default function Contacto() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     if (!form.checkValidity()) {
@@ -16,28 +17,31 @@ export default function Contacto() {
       return;
     }
 
-    // Placeholder submit: shows the confirmation screen after a short delay.
-    // Swap this for the real POST to direccion@unge.ar when the endpoint
-    // exists — the payload the doc asks for is already assembled below.
+    setError(null);
     setSending(true);
 
-    const formData = new FormData(form);
-    const payload = {
-      nombre: formData.get("nombre"),
-      organizacion: formData.get("organizacion") || "-",
-      email: formData.get("email"),
-      telefono: formData.get("telefono") || "-",
-      motivo: formData.get("motivo"),
-      mensaje: formData.get("mensaje"),
-      destino: CONTACTO.email,
-    };
-    console.info("[UNGE] contacto (demo, sin envío real):", payload);
+    try {
+      const res = await fetch("/api/contacto", {
+        method: "POST",
+        body: new FormData(form),
+      });
 
-    window.setTimeout(() => {
-      setSending(false);
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "No se pudo enviar el mensaje.");
+      }
+
       setSubmitted(true);
       form.reset();
-    }, 900);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "No se pudo enviar el mensaje. Escribinos a " + CONTACTO.email + "."
+      );
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -73,7 +77,7 @@ export default function Contacto() {
 
                 <button
                   type="button"
-                  onClick={() => setSubmitted(false)}
+                  onClick={() => { setSubmitted(false); setError(null); }}
                   className="group mt-8 inline-flex items-center gap-3 border-b border-white/30 pb-1.5 text-[0.78rem] font-light leading-none tracking-[0.1em] text-white/70 transition hover:gap-4 hover:border-white/60 hover:text-white"
                 >
                   <span>ENVIAR OTRO MENSAJE</span>
@@ -137,6 +141,15 @@ export default function Contacto() {
                   <input name="privacidad" type="checkbox" required className="h-4 w-4 shrink-0 cursor-pointer rounded-sm border-white/40 bg-transparent accent-white" />
                   <span>Acepto la política de privacidad de UNGE.</span>
                 </label>
+
+                {error ? (
+                  <p
+                    role="alert"
+                    className="rounded-xl border border-red-400/40 bg-red-400/10 px-4 py-3 text-[0.85rem] font-light leading-[1.6] text-red-200"
+                  >
+                    {error}
+                  </p>
+                ) : null}
 
                 <button
                   type="submit"
