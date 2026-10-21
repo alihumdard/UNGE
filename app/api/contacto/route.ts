@@ -1,14 +1,19 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { CONTACTO } from "@/data/content";
 
-// Where the form lands. CONTACTO_TO lets us point at a test inbox without
-// touching the address the site shows publicly.
+// Recipient. CONTACTO_TO points at a test inbox during development; with it
+// unset the form goes to the address the document specifies.
 const TO = process.env.CONTACTO_TO || CONTACTO.email;
 
-// Resend's shared sender works without verifying a domain, which is what we
-// need until unge.ar is set up there.
-const FROM = process.env.CONTACTO_FROM || "UNGE <onboarding@resend.dev>";
+const SMTP_HOST = process.env.SMTP_HOST || "smtp.gmail.com";
+const SMTP_PORT = Number(process.env.SMTP_PORT || 587);
+const SMTP_USER = process.env.SMTP_USER;
+const SMTP_PASS = process.env.SMTP_PASS;
+
+// The SMTP account is only the transport. It is deliberately separate from
+// TO, which is the inbox UNGE actually reads.
+const FROM = process.env.SMTP_FROM || `UNGE <${SMTP_USER}>`;
 
 const MOTIVOS = new Set(CONTACTO.motivos);
 
@@ -60,9 +65,8 @@ export async function POST(request: Request) {
 
   // Config is checked after validation so a malformed post still gets the
   // field error it deserves rather than a server error.
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.error("[contacto] RESEND_API_KEY no está configurada");
+  if (!SMTP_USER || !SMTP_PASS) {
+    console.error("[contacto] SMTP_USER / SMTP_PASS no están configuradas");
     return NextResponse.json(
       { error: "El envío de correo no está configurado." },
       { status: 500 }
@@ -117,27 +121,25 @@ export async function POST(request: Request) {
 </div>`.trim();
 
   try {
-    const resend = new Resend(apiKey);
-    const { data, error } = await resend.emails.send({
+    const transporter = nodemailer.createTransport({
+      host: SMTP_HOST,
+      port: SMTP_PORT,
+      secure: SMTP_PORT === 465,
+      auth: { user: SMTP_USER, pass: SMTP_PASS },
+    });
+
+    await transporter.sendMail({
       from: FROM,
-      to: [TO],
-      replyTo: email,
+      to: TO,
+      replyTo: `${nombre} <${email}>`,
       subject: `Contacto UNGE · ${motivo} · ${nombre}`,
       text,
       html,
     });
 
-    if (error) {
-      console.error("[contacto] Resend:", error);
-      return NextResponse.json(
-        { error: "No se pudo enviar el mensaje." },
-        { status: 502 }
-      );
-    }
-
-    return NextResponse.json({ ok: true, id: data?.id });
+    return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("[contacto] error inesperado:", err);
+    console.error("[contacto] fallo el envío:", err);
     return NextResponse.json({ error: "No se pudo enviar el mensaje." }, { status: 502 });
   }
 }
