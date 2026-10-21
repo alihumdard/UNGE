@@ -5,6 +5,8 @@ import Laboratorio from "@/components/Laboratorio";
 import Ecosistema from "@/components/Ecosistema";
 import Entornos from "@/components/Entornos";
 import Invernaderos from "@/components/Invernaderos";
+import Productos from "@/components/Productos";
+import Sede from "@/components/Sede";
 import Investigacion from "@/components/Investigacion";
 import Red from "@/components/Red";
 import Crecer from "@/components/Crecer";
@@ -22,6 +24,8 @@ export default function Home() {
       <Ecosistema />
       <Entornos />
       <Invernaderos />
+      <Productos />
+      <Sede />
       <Investigacion />
       <Red />
       <Crecer />

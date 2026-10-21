@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import { FOOTER_LINKS, CONTACTO } from "@/data/content";
+import { FOOTER_LINKS, CONTACTO, INSTITUCIONAL } from "@/data/content";
 
 export default function Footer() {
   return (
@@ -91,7 +91,10 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-[1800px] flex-col items-center justify-between gap-3 px-6 py-6 text-[0.75rem] font-light text-white/30 md:flex-row md:px-8 lg:px-10 xl:px-12">
-          <span>© {new Date().getFullYear()} UNGE. Todos los derechos reservados.</span>
+          <span className="text-center md:text-left">
+            © {new Date().getFullYear()} {INSTITUCIONAL.razonSocial} · CUIT{" "}
+            {INSTITUCIONAL.cuit} · {INSTITUCIONAL.personeria}
+          </span>
           <div className="flex gap-6">
             <a href="/aviso-legal" className="transition hover:text-white/60">Aviso legal</a>
             <a href="/politica-privacidad" className="transition hover:text-white/60">Política de privacidad</a>

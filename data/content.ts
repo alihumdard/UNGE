@@ -1,6 +1,13 @@
+// Datos institucionales confirmados por UNGE
+export const INSTITUCIONAL = {
+  razonSocial: "Asociación Civil UNGE",
+  cuit: "30-71937170-8",
+  personeria: "Matrícula N.º 2031206",
+};
+
 export const NAV = [
   { label: "CIENCIA", href: "#ciencia" },
-  { label: "PRODUCTOS", href: "#produccion" },
+  { label: "PRODUCTOS", href: "#productos" },
   { label: "INNOVACIÓN", href: "#invernaderos" },
   { label: "NOSOTROS", href: "#nosotros" },
 ];
@@ -14,6 +21,7 @@ export const FOOTER_LINKS = [
       { label: "Un ecosistema 360", href: "#ecosistema" },
       { label: "Tres entornos de cultivo", href: "#produccion" },
       { label: "Invernaderos inteligentes", href: "#invernaderos" },
+      { label: "Catálogo de productos", href: "#productos" },
     ],
   },
   {
@@ -27,6 +35,7 @@ export const FOOTER_LINKS = [
   {
     title: "Proyecto",
     items: [
+      { label: "Sede social y salud", href: "#sede" },
       { label: "Una red que genera valor", href: "#red" },
       { label: "Crecer también es incluir", href: "#impacto" },
       { label: "Nosotros", href: "#nosotros" },
@@ -85,7 +94,7 @@ export const ENTORNOS = {
   accent: ["DE CULTIVO"],
   subtitle: "Distintas escalas de producción. Un mismo criterio de desarrollo y aprendizaje.",
   items: [
-    { n: "01", title: "CULTIVO EXTERIOR - FALDA DEL CARMEN", text: ["Nodo orientado a trabajar a mayor escala", "en un entorno de cultivo exterior."] },
+    { n: "01", title: "CULTIVO EXTERIOR - MALAGUEÑO (PRÓXIMAMENTE)", text: ["Nodo orientado a trabajar a mayor escala", "en un entorno de cultivo exterior."] },
     { n: "02", title: "PRODUCCIÓN INDOOR", text: ["Entorno con control de variables de producción,", "pensado para trabajar con lotes estandarizados", "y procesos comparables."] },
     { n: "03", title: "CULTIVO BOUTIQUE", text: ["Espacio destinado a micro-lotes, selección", "de fenotipos y desarrollo de genéticas."] },
   ],
@@ -115,8 +124,69 @@ export const INVERNADEROS = {
   ],
 };
 
-export const INVESTIGACION = {
+export const PRODUCTOS = {
   index: "07",
+  white: ["CATÁLOGO DE PRODUCTOS"],
+  accent: ["Y FORMULACIONES"],
+  subtitle: "Línea desarrollada bajo estrictos estándares de trazabilidad y caracterización química.",
+  items: [
+    {
+      n: "01",
+      title: "ACEITES MEDICINALES / TINTURAS ESTANDARIZADAS",
+      nota: "Con perfil cromatográfico verificado.",
+      lista: [
+        "Quimiotipo I: dominancia de THC.",
+        "Quimiotipo II: balanceado / ratio equitativo (CBD:THC ~ 1:1).",
+        "Quimiotipo III: dominancia de CBD (espectro completo / full spectrum).",
+      ],
+    },
+    {
+      n: "02",
+      title: "FITOCOSMÉTICA Y TÓPICOS",
+      lista: ["Ungüentos y bálsamos de formulación magistral/estandarizada."],
+    },
+    {
+      n: "03",
+      title: "BIOMASA FLORAL",
+      lista: [
+        "Inflorescencias secas y curadas, obtenidas de semillas inscriptas y certificadas ante el INASE (Instituto Nacional de Semillas).",
+      ],
+    },
+  ],
+};
+
+export const SEDE = {
+  index: "08",
+  white: ["SEDE SOCIAL Y"],
+  accent: ["ÁREA DE SALUD"],
+  subtitle: "Comunidad y abordaje terapéutico.",
+
+  social: {
+    title: "ESPACIO SOCIAL Y COMUNITARIO",
+    text: "La sede social se consolida como un punto de encuentro interdisciplinario destinado al intercambio, la divulgación y la vinculación comunitaria. Las instalaciones albergan una agenda continua de:",
+    items: [
+      { n: "01", title: "CAPACITACIONES Y FORMACIÓN TÉCNICA", text: "Charlas, jornadas informativas y cursos sobre cultivo, uso terapéutico y marco normativo." },
+      { n: "02", title: "ACTIVIDADES CULTURALES Y RECREATIVAS", text: "Encuentros orientados a fortalecer el tejido comunitario y el bienestar de los asociados." },
+      { n: "03", title: "TALLERES PRÁCTICOS", text: "Espacios de aprendizaje participativo y desarrollo de habilidades." },
+    ],
+  },
+
+  salud: {
+    title: "ÁREA DE SALUD Y DISPENSARIO",
+    subtitle: "Abordaje terapéutico integral.",
+    text: "El dispensario cuenta con un área sociosanitaria orientada al acompañamiento clínico y terapéutico de los usuarios, con especial foco en personas con discapacidad y adultos mayores.",
+    equipo: "El servicio es coordinado de manera interdisciplinaria por el Dr. Guillermo Schuegers, médico institucional especialista en fitofármacos y cannabis medicinal, junto a Ana Gabas, Directora del Área, profesional con amplia trayectoria en el campo de la discapacidad y la inclusión.",
+    ejesTitle: "Ejes del modelo de atención",
+    ejes: [
+      { n: "01", title: "ABORDAJE INTERDISCIPLINARIO Y CENTRADO EN LA PERSONA", text: "Integración de la perspectiva médica con un enfoque biopsicosocial adaptado a las singularidades de cada usuario." },
+      { n: "02", title: "PLAN TERAPÉUTICO INDIVIDUALIZADO", text: "Evaluación inicial para el diseño de esquemas terapéuticos a medida, optimizando perfiles de cannabinoides, dosificaciones y vías de administración." },
+      { n: "03", title: "SEGUIMIENTO PERIÓDICO Y MONITOREO CLÍNICO", text: "Controles continuos para evaluar la eficacia, adherencia al tratamiento y evolución del bienestar integral y la calidad de vida de cada persona." },
+    ],
+  },
+};
+
+export const INVESTIGACION = {
+  index: "09",
   white: ["INVESTIGACIÓN"],
   accent: ["QUE SE APLICA"],
   subtitle: "De los datos al control de calidad y la mejora de procesos.",
@@ -134,7 +204,7 @@ export const INVESTIGACION = {
 };
 
 export const RED = {
-  index: "08",
+  index: "10",
   white: ["UNA RED QUE"],
   accent: ["GENERA VALOR"],
   subtitle: "El desarrollo del sector también requiere empresas, especialistas e instituciones.",
@@ -152,7 +222,7 @@ export const RED = {
 };
 
 export const NOSOTROS = {
-  index: "10",
+  index: "12",
   white: ["UNGE: ARTICULAR"],
   accent: ["PARA TRANSFORMAR"],
   subtitle: "Un proyecto que conecta producción, ciencia, innovación y comunidad.",
@@ -172,7 +242,7 @@ export const NOSOTROS = {
 };
 
 export const CONTACTO = {
-  index: "11",
+  index: "13",
   white: ["HABLEMOS DE LO QUE"],
   accent: ["PODEMOS CONSTRUIR"],
   subtitle: "Investigación, tecnología, alianzas y nuevos proyectos empiezan con una conversación.",
@@ -183,11 +253,11 @@ export const CONTACTO = {
 };
 
 export const CRECER = {
-  index: "09",
+  index: "11",
   white: ["CRECER TAMBIÉN"],
   accent: ["ES INCLUIR"],
   subtitle: "El impacto social forma parte del modelo, no es una iniciativa separada.",
-  text: ["UNGE trabaja junto a Centro Enlaces en una propuesta de inclusión laboral para personas", "con discapacidad, vinculada a necesidades y funciones reales del ecosistema."],
+  text: ["UNGE trabaja junto a Fundación Enlaces en una propuesta de inclusión laboral para personas", "con discapacidad, vinculada a necesidades y funciones reales del ecosistema."],
   items: [
     { n: "01", title: "IDENTIFICAR OPORTUNIDADES", text: ["Reconocer tareas posibles dentro de la asociación,", "en eventos y en organizaciones vinculadas."] },
     { n: "02", title: "FORMAR Y ACOMPAÑAR", text: ["Promover instancias de capacitación y seguimiento", "según las características de cada incorporación."] },
