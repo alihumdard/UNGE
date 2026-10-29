@@ -44,24 +44,10 @@ export default function Ecosistema() {
               key={it.n}
               className="group relative flex min-h-[280px] flex-col justify-end overflow-hidden bg-[#0d1722] p-7 md:min-h-[340px] md:p-9 lg:min-h-[420px] lg:p-7 xl:p-8"
             >
-              {it.n === "01" ? (
-                <video
-                  className="absolute inset-0 h-full w-full object-cover"
-                  src="/video/cultivo-aerial.mp4"
-                  poster="/video/cultivo-aerial-poster.jpg"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-hidden
-                />
-              ) : (
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${BG_BY_INDEX[it.n]})` }}
-                />
-              )}
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${BG_BY_INDEX[it.n]})` }}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0d1722] via-[#0d1722]/80 via-38% to-[#0d1722]/10" />
 
               <div className="relative z-10">
