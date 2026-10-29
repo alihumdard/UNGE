@@ -98,7 +98,7 @@ export default function Navbar() {
           {/* Hamburger button — always right */}
           {/* 44px touch target, with the bars centred inside it */}
           <button
-            className="relative -mr-1 ml-auto flex h-12 w-12 items-center justify-center lg:hidden"
+            className="relative -mr-3 ml-auto flex h-12 w-12 items-center justify-center lg:hidden"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={open}
