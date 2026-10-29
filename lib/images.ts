@@ -25,14 +25,17 @@ export const IMAGES = {
   // 07 · Investigación que se aplica
   investigacion: "/images/galpon/investigacion.jpg",
 
-  // 08 · Una red que genera valor
+  // 08 · Sede social y área de salud
+  sede: "/images/galpon/sede.jpg",
+
+  // 09 · Una red que genera valor
   red: "/images/galpon/red.jpg",
 
-  // 09 · Crecer también es incluir
+  // 10 · Crecer también es incluir
   crecer: "/images/galpon/crecer.jpg",
   crecerAmbiental: "/images/galpon/crecer-ambiental.jpg",
 
-  // 10 · Nosotros — the doc rules out stand-in people ("no usar personas
+  // 11 · Nosotros — the doc rules out stand-in people ("no usar personas
   // ficticias"), so this is the site itself rather than a stock team photo
   nosotros: "/images/galpon/nosotros.jpg",
 };

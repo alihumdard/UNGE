@@ -1,6 +1,7 @@
 import SectionIndex from "./SectionIndex";
 import TwoToneHeading from "./TwoToneHeading";
 import { SEDE } from "@/data/content";
+import { IMAGES } from "@/lib/images";
 
 export default function Sede() {
   return (
@@ -8,16 +9,28 @@ export default function Sede() {
       <div className="mx-auto max-w-[1800px] px-6 pb-16 pt-28 md:px-8 md:pb-20 md:pt-36 lg:px-10 lg:pb-24 lg:pt-44 xl:px-12">
         <SectionIndex n={SEDE.index} />
 
-        <div className="mt-5 grid grid-cols-1 gap-8 md:mt-6 lg:grid-cols-[auto_1fr] lg:items-end lg:gap-14">
-          <TwoToneHeading
-            white={SEDE.white}
-            accent={SEDE.accent}
-            className="text-[clamp(2rem,4.2vw,4.8rem)] leading-[0.98]"
-          />
+        <div className="mt-6 grid grid-cols-1 gap-10 md:mt-8 lg:grid-cols-2 lg:items-center lg:gap-14">
+          <div>
+            <TwoToneHeading
+              white={SEDE.white}
+              accent={SEDE.accent}
+              className="text-[clamp(2rem,4.2vw,4.8rem)] leading-[0.98]"
+            />
 
-          <p className="max-w-[46ch] text-[clamp(1.1rem,1.3vw,1.45rem)] font-light leading-[1.45] tracking-[0.01em] text-white lg:pb-3">
-            {SEDE.subtitle}
-          </p>
+            <p className="mt-5 max-w-[46ch] text-[clamp(1.1rem,1.3vw,1.45rem)] font-light leading-[1.45] tracking-[0.01em] text-white">
+              {SEDE.subtitle}
+            </p>
+          </div>
+
+          <div
+            className="h-[240px] w-full bg-cover bg-no-repeat sm:h-[300px] lg:h-[360px] xl:h-[400px]"
+            style={{
+              backgroundImage: `url(${IMAGES.sede})`,
+              backgroundPosition: "center 30%",
+            }}
+            role="img"
+            aria-label="Equipo de UNGE trabajando en el cultivo"
+          />
         </div>
 
         {/* Espacio social y comunitario */}
