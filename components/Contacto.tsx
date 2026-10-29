@@ -154,7 +154,7 @@ export default function Contacto() {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="group mt-2 inline-flex w-full items-center justify-between gap-4 rounded-full sm:w-fit sm:justify-start sm:gap-6 sm:self-end border border-white/70 bg-white/5 px-7 py-4 text-[0.8rem] font-light tracking-[0.08em] text-white transition hover:bg-white/10 disabled:opacity-60"
+                  className="group mt-2 inline-flex w-full items-center justify-between gap-4 rounded-full sm:w-fit sm:justify-start sm:gap-6 sm:self-end border border-white/70 bg-white/5 px-7 py-4 text-[0.8rem] font-light tracking-[0.08em] text-white transition hover:bg-white/10 cursor-pointer disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   <span>{sending ? "ENVIANDO…" : "ENVIAR MENSAJE"}</span>
                   <svg width="48" height="10" viewBox="0 0 48 10" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden>

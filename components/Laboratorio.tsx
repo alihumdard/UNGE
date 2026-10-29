@@ -34,8 +34,8 @@ export default function Laboratorio() {
       {/* Right: 3 rows */}
       <div className="grid grid-rows-3 divide-y divide-white/10 bg-[#10161d]">
         {LAB.items.map((it) => (
-          <div key={it.n} className="grid grid-cols-[28%_1fr] items-center">
-            <div className="flex h-full items-center justify-center border-r border-white/10 py-8 text-[clamp(2.5rem,4vw,4.2rem)] font-light text-white md:py-0">
+          <div key={it.n} className="grid grid-cols-[28%_1fr] items-start md:items-center">
+            <div className="flex h-full items-start justify-center border-r border-white/10 pt-8 text-[clamp(2.5rem,4vw,4.2rem)] font-light text-white md:items-center md:py-0">
               <span>{it.n}</span>
             </div>
             <div className="px-6 py-6 md:px-[11%] md:py-0">
