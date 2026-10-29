@@ -5,10 +5,29 @@ import { NAV } from "@/data/content";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const scrolled = progress > 0.5;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    // Scroll-linked value instead of a hard boolean, so the bar eases
+    // between states over 80px rather than snapping at one pixel.
+    let ticking = false;
+    const DISTANCE = 80;
+
+    const update = () => {
+      const p = Math.min(1, Math.max(0, window.scrollY / DISTANCE));
+      setProgress(p);
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -34,10 +53,19 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Sticky top bar */}
+      {/* Sticky top bar. Background/blur/shadow are driven continuously by
+          scroll progress (no snap point) on both desktop and mobile;
+          padding/logo size still use the `scrolled` boolean but ease via
+          the same transition-all/duration-300 Tailwind already applies,
+          so the whole bar reads as one smooth motion instead of a jump. */}
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "shadow-lg backdrop-blur-md" : ""}`}
-        style={{ backgroundColor: scrolled ? "rgba(13, 23, 34, 0.9)" : "transparent" }}
+        className="fixed inset-x-0 top-0 z-50 transition-shadow duration-300"
+        style={{
+          backgroundColor: `rgba(13, 23, 34, ${(progress * 0.9).toFixed(3)})`,
+          backdropFilter: `blur(${(progress * 12).toFixed(1)}px)`,
+          WebkitBackdropFilter: `blur(${(progress * 12).toFixed(1)}px)`,
+          boxShadow: progress > 0.05 ? `0 10px 30px -10px rgba(0, 0, 0, ${(progress * 0.35).toFixed(3)})` : "none",
+        }}
       >
         <div
           className={`mx-auto flex max-w-[1800px] items-center px-6 py-5 transition-all duration-300 md:px-8 md:py-7 lg:px-10 xl:px-12 ${
