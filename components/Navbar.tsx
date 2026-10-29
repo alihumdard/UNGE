@@ -72,7 +72,15 @@ export default function Navbar() {
             scrolled ? "lg:py-4" : "lg:py-9"
           }`}
         >
-          <Logo scrolled={scrolled} />
+          {/* The logo scales down visually (CSS transform) instead of
+              shrinking its own box, so its layout width never changes and
+              nothing after it shifts or leaves an imbalanced gap. */}
+          <div
+            className="origin-left transition-transform duration-300"
+            style={{ transform: `scale(${scrolled ? 0.82 : 1})` }}
+          >
+            <Logo />
+          </div>
 
           {/* Desktop nav */}
           <nav className="mt-1.5 hidden items-center gap-8 lg:ml-20 lg:flex lg:gap-9 xl:ml-28 xl:gap-10">
