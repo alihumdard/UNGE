@@ -26,7 +26,7 @@ export default function Sede() {
             className="h-[240px] w-full bg-cover bg-no-repeat sm:h-[300px] lg:h-[360px] xl:h-[400px]"
             style={{
               backgroundImage: `url(${IMAGES.sede})`,
-              backgroundPosition: "center 30%",
+              backgroundPosition: "center 25%",
             }}
             role="img"
             aria-label="Equipo de UNGE trabajando en el cultivo"
