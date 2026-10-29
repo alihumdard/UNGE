@@ -23,7 +23,7 @@ export default function Sede() {
           </div>
 
           <div
-            className="h-[240px] w-full max-w-[720px] justify-self-end bg-cover bg-no-repeat sm:h-[300px] lg:h-[360px] xl:h-[400px]"
+            className="h-[240px] w-full max-w-[720px] justify-self-end rounded-2xl bg-cover bg-no-repeat sm:h-[300px] lg:h-[360px] xl:h-[400px]"
             style={{
               backgroundImage: `url(${IMAGES.sede})`,
               backgroundPosition: "center 65%",
