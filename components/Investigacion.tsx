@@ -31,7 +31,7 @@ export default function Investigacion() {
           </div>
 
           <div
-            className="h-[200px] bg-cover bg-center md:h-[260px] lg:h-[300px] xl:h-[340px]"
+            className="h-[200px] rounded-2xl bg-cover bg-center md:h-[260px] lg:h-[300px] xl:h-[340px]"
             style={{ backgroundImage: `url(${IMAGES.investigacion})` }}
             role="img"
             aria-label="Lotes en seguimiento"
