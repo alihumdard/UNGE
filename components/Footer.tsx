@@ -4,7 +4,7 @@ import { FOOTER_LINKS, CONTACTO, INSTITUCIONAL } from "@/data/content";
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#0a1017] text-white">
-      <div className="mx-auto max-w-[1800px] px-6 py-12 md:px-8 md:py-20 lg:px-10 xl:px-12">
+      <div className="mx-auto max-w-[1800px] px-6 py-12 md:px-8 md:py-14 lg:px-10 xl:px-12">
         {/* Brand sits on its own line on narrow screens; the three link
             groups stay side by side from the smallest breakpoint up */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:gap-10 xl:gap-14">
@@ -68,7 +68,7 @@ export default function Footer() {
         </div>
 
         {/* Contact strip */}
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-white/10 pt-7 sm:gap-8 md:mt-16">
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-white/10 pt-7 sm:gap-8 md:mt-10">
           <a
             href={`mailto:${CONTACTO.email}`}
             className="text-[clamp(0.92rem,1.3vw,1.35rem)] font-light tracking-[0.01em] text-white/80 transition hover:text-white"
@@ -90,7 +90,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-[1800px] flex-col items-center justify-between gap-3 px-6 py-6 text-[0.75rem] font-light text-white/30 md:flex-row md:px-8 lg:px-10 xl:px-12">
+        <div className="mx-auto flex max-w-[1800px] flex-col items-center justify-between gap-3 px-6 py-5 text-[0.75rem] font-light text-white/30 md:flex-row md:px-8 lg:px-10 xl:px-12">
           <span className="text-center md:text-left">
             © {new Date().getFullYear()} {INSTITUCIONAL.razonSocial} · CUIT{" "}
             {INSTITUCIONAL.cuit} · {INSTITUCIONAL.personeria}
